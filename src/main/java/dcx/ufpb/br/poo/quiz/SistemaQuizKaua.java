@@ -21,11 +21,12 @@ public class SistemaQuizKaua implements SistemaQuiz{
     }
 
     @Override
-    public Pergunta sorteiaPergunta() {
+    public Pergunta sorteiaPergunta() throws PerguntaNaoExisteException{
         if (this.perguntas.size()==0){
-            return null;
+            throw new PerguntaNaoExisteException ("Não existe pergunta cadastrada!");
         } else {
-            return this.perguntas.get(0);
+            int posicao = (int) (Math.random()*this.perguntas.size());
+            return this.perguntas.get(posicao);
         }
 
     }
