@@ -40,25 +40,4 @@ public class MainApp {
 
 
     }
-
-
-
-
-
-    //        String opcao = JOptionPane.showInputDialog("1. Cadastrar autor\n2.Remover autor\n3.Mostrar autor");
-//
-//        switch(opcao){
-//            case "1":
-//                try{
-//                    String nomeAutor = JOptionPane.showInputDialog("Digite o nome do autor: ");
-//                    String codigo = JOptionPane.showInputDialog("Digite o codigo: ");
-//                    String dataNascimento = JOptionPane.showInputDialog("Digite a data de nascimento: ");
-//                    Autor autor = new Autor(nomeAutor, codigo, dataNascimento);
-//                    autores.cadastrarAutor(autor);
-//                } catch(AutorJaCadastradoException e) {
-//                    JOptionPane.showMessageDialog(null, e.getMessage());
-//                }
-//                break;
-//
-//        }
 }

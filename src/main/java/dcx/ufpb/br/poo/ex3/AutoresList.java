@@ -1,9 +1,11 @@
 package dcx.ufpb.br.poo.ex3;
 
+import dcx.ufpb.br.poo.quiz.SistemaQuiz;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class AutoresList extends Autor{
+public class AutoresList implements SistemaAutor {
     private List<Autor> autores;
 
     public AutoresList(){
