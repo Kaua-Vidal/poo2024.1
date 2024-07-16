@@ -1,57 +1,49 @@
-package dcx.ufpb.br.poo.biblioteca;
+package dcx.ufpb.br.poo.ex3;
 
-import java.io.Serializable;
 import java.util.Objects;
 
-public class Autor implements Comparable<Autor>, Serializable {
-
-    private String codigo;
+public class Autor implements Comparable<Autor> {
     private String nome;
+    private String codigo;
     private String dataNascimento;
 
-
-    public Autor (String codigo, String nome, String dataNascimento){
-        this.codigo = codigo;
+    public Autor (String nome, String codigo, String dataNascimeto){
         this.nome = nome;
-        this.dataNascimento = dataNascimento;
-
-    }
-
-    public Autor (String codigo){
-        this(codigo, "", "");
-;
+        this.codigo = codigo;
+        this.dataNascimento = dataNascimeto;
     }
 
     public Autor (){
         this("","","");
     }
 
-    public String getCodigo() {
-        return codigo;
+    public String getDataNascimento(){
+        return this.dataNascimento;
     }
-
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
-    }
-
-
     public String getNome(){
         return this.nome;
     }
-
-    public String getDataNascimento(){
-        return this.dataNascimento;
+    public String getCodigo(){
+        return this.codigo;
     }
 
     public void setNome(String nome){
         this.nome = nome;
     }
-
     public void setDataNascimento(String dataNascimento){
         this.dataNascimento = dataNascimento;
     }
+    public void setCodigo(String codigo){
+        this.codigo = codigo;
+    }
 
-    @Override   //sobrescrevendo uma outra classe
+    public String toString() {
+        return "Autor: " + getNome()
+                + " / Código: " + getCodigo()
+                + " / Data de nascimento: " + getDataNascimento();
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -67,15 +59,14 @@ public class Autor implements Comparable<Autor>, Serializable {
 
     @Override
     public int compareTo(Autor o) {
-        if (this.nome==null && o.nome==null){
+        if(this.nome == o.nome || this.codigo == o.codigo){
             return 0;
-        } else if (nome==null && o.nome!=null){
+        } else if (this.nome == o.nome && this.codigo != o.codigo){
             return -1;
-        } else if (o.nome==null){
-            return 1;
         } else {
-            return this.nome.compareTo(o.nome);
+            return 1;
         }
     }
-}
 
+
+}
