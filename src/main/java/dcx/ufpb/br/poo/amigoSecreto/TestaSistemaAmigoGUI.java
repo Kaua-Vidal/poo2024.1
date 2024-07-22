@@ -34,10 +34,11 @@ public class TestaSistemaAmigoGUI {
         String remetente = JOptionPane.showInputDialog("De quem é a mensagem? ");
         String texto = JOptionPane.showInputDialog("Qual o texto a ser passado? ");
         String ehAnonima = JOptionPane.showInputDialog("Essa mensagem será anônima? (S ou N) ");
+        int id = Integer.parseInt(JOptionPane.showInputDialog("Qual número dessa mensagem? "));
         boolean anonima = false;
         if (ehAnonima.equalsIgnoreCase("S")){
             anonima = true;
         }
-        amigo.enviarMensagemParaTodos(texto, remetente, anonima);
+        amigo.enviarMensagemParaTodos(texto, remetente, anonima, id);
     }
 }

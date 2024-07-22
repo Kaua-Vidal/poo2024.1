@@ -1,11 +1,10 @@
 package dcx.ufpb.br.poo.amigoSecreto;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
-public class SistemaAmigo {
-    private List<Mensagem> mensagens = new ArrayList<>();
-    private List<Amigo> amigos = new ArrayList<>();
+public class SistemaAmigoMap {
+    private Map<Integer, Mensagem> mensagens = new HashMap<>();
+    private Map<String, Amigo> amigos = new HashMap<>();
 
 
 
@@ -13,11 +12,11 @@ public class SistemaAmigo {
 
     public void cadastraAmigo(String nomeAmigo, String emailAmigo){
         Amigo novoAmigo = new Amigo(nomeAmigo, emailAmigo);
-        amigos.add(novoAmigo);
+        amigos.put(nomeAmigo, novoAmigo);
     }
 
     public Amigo pesquisaAmigo(String emailAmigo) throws AmigoInexistenteException {
-        for(Amigo a:amigos){
+        for(Amigo a : amigos.values()){
             if (emailAmigo.equals(a.getEmail())){
                 return a;
             }
@@ -37,7 +36,7 @@ public class SistemaAmigo {
         List<Mensagem> todasMensagensAnonimas = new ArrayList<>();
 
 
-        for (Mensagem a:mensagens){
+        for (Mensagem a : mensagens.values()){
             if (a.ehAnonima()){
                 todasMensagensAnonimas.add(a);
             }
@@ -46,8 +45,8 @@ public class SistemaAmigo {
     }
 
     public List<Mensagem> pesquisaTodasAsMensagens(){
-        List<Mensagem> todasMensagens = new ArrayList<>();
-        for (Mensagem a:mensagens){
+        List<Mensagem> todasMensagens = new LinkedList<>();
+        for (Mensagem a : mensagens.values()){
             todasMensagens.add(a);
         }
         return todasMensagens;
@@ -77,6 +76,6 @@ public class SistemaAmigo {
         }
 
         Amigo amigoSorteado = pesquisaAmigo(emailAmigoSorteado);
-        return amigoSorteado.getNome();
+        return amigoSorteado.getEmail();
     }
 }

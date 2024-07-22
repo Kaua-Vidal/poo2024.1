@@ -16,10 +16,10 @@ public class TestaSistemaAmigo {
             amigo.configuraAmigoSecretoDe("maria@email.com", "jose@email.com");
 
             //3c
-            amigo.enviarMensagemParaAlguem("oi José", "maria@email.com","jose@email.com",true);
+            amigo.enviarMensagemParaAlguem("oi José", "maria@email.com","jose@email.com",true, 1);
 
             //4d
-            amigo.enviarMensagemParaTodos("oi povo", "maria@email.com", true);
+            amigo.enviarMensagemParaTodos("oi povo", "maria@email.com", true, 1);
 
             //4e
             List<Mensagem> mensagensAnonimas = amigo.pesquisaMensagensAnonimas();

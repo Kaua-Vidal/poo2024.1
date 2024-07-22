@@ -1,6 +1,6 @@
 package dcx.ufpb.br.poo.amigoSecreto;
 
-public class MensagemParaAlguem extends  Mensagem{
+public class MensagemParaAlguem extends Mensagem{
     private String emailDestinatario;
 
     public String getEmailDestinatario() {
@@ -11,8 +11,8 @@ public class MensagemParaAlguem extends  Mensagem{
         this.emailDestinatario = emailDestinatario;
     }
 
-    public MensagemParaAlguem (String texto, String emailRemetente, String emailDestinatario, boolean anonima){
-        super(texto, emailRemetente, anonima);
+    public MensagemParaAlguem (String texto, String emailRemetente, String emailDestinatario, boolean anonima, int id){
+        super(texto, emailRemetente, anonima, id);
         this.emailDestinatario = emailDestinatario;
 
     }
