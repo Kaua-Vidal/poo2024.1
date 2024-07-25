@@ -6,7 +6,7 @@ public class TestaSistemaAmigoGUI {
     public static void main(String[] args){
 
         //4a
-        SistemaAmigo amigo = new SistemaAmigo();
+        SistemaAmigoMap amigo = new SistemaAmigoMap();
 
         //4b
         int quantAmigos = Integer.parseInt(JOptionPane.showInputDialog("Quantos amigos irão brincar? "));
