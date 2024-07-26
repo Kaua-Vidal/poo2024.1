@@ -34,7 +34,7 @@ public class SistemaAmigoMapTest {
         } catch (AmigoInexistenteException e) {
             //Ok
         }
-        try {
+        try {k
             sistema.cadastraAmigo("ayla", "ayla@teste.com");
             Amigo a = sistema.pesquisaAmigo("ayla@teste.com");
             assertEquals("ayla", a.getNome());
