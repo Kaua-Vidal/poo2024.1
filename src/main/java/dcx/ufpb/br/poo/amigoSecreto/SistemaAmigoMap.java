@@ -26,12 +26,10 @@ public class SistemaAmigoMap {
 
     public void enviarMensagemParaTodos(String texto, String emailRemetente, boolean ehAnonima, int id){
         MensagemParaTodos m = new MensagemParaTodos(texto, emailRemetente, ehAnonima, id);
-        mensagens.put(id, m);
         System.out.println(m.getTextoCompletoAExibir());
     }
     public void enviarMensagemParaAlguem(String texto, String emailRemetente, String emailDestinatario, boolean ehAnonima, int id){
         MensagemParaAlguem m = new MensagemParaAlguem(texto, emailRemetente, emailDestinatario, ehAnonima, id);
-        mensagens.put(id, m);
         System.out.println(m.getTextoCompletoAExibir());
     }
     public List<Mensagem> pesquisaMensagensAnonimas(){
@@ -51,7 +49,6 @@ public class SistemaAmigoMap {
         for (Mensagem a : mensagens.values()){
             todasMensagens.add(a);
         }
-        System.out.println("todas as mensagens: "+ todasMensagens);
         return todasMensagens;
     }
     public void configuraAmigoSecretoDe(String emailDaPessoa, String emailAmigoSorteado) throws AmigoInexistenteException{
