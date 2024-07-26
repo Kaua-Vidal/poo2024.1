@@ -10,7 +10,7 @@ import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class SistemaAmigoTest {
+public class SistemaAmigoMapTest {
 
     SistemaAmigoMap sistema;
 
@@ -79,7 +79,7 @@ public class SistemaAmigoTest {
         assertTrue(sistema.pesquisaTodasAsMensagens().isEmpty());
         sistema.enviarMensagemParaAlguem("texto 1", "ayla@dcx.ufpb.br", "rodrigor@dcx.ufpb.br", false,1 );
         assertTrue(sistema.pesquisaTodasAsMensagens().size()==1);
-        sistema.enviarMensagemParaAlguem("texto 2", "ayla@dcx.ufpb.br", "rodrigor@dcx.ufpb.br", true,1);
+        sistema.enviarMensagemParaAlguem("texto 2", "ayla@dcx.ufpb.br", "rodrigor@dcx.ufpb.br", true,2);
         assertTrue(sistema.pesquisaTodasAsMensagens().size()==2);
     }
 
