@@ -27,10 +27,12 @@ public class SistemaAmigo {
 
     public void enviarMensagemParaTodos(String texto, String emailRemetente, boolean ehAnonima, int id){
         MensagemParaTodos m = new MensagemParaTodos(texto, emailRemetente, ehAnonima, id);
+        mensagens.add(m);
         System.out.println(m.getTextoCompletoAExibir());
     }
     public void enviarMensagemParaAlguem(String texto, String emailRemetente, String emailDestinatario, boolean ehAnonima, int id){
         MensagemParaAlguem m = new MensagemParaAlguem(texto, emailRemetente, emailDestinatario, ehAnonima, id);
+        mensagens.add(m);
         System.out.println(m.getTextoCompletoAExibir());
     }
     public List<Mensagem> pesquisaMensagensAnonimas(){
@@ -77,6 +79,6 @@ public class SistemaAmigo {
         }
 
         Amigo amigoSorteado = pesquisaAmigo(emailAmigoSorteado);
-        return amigoSorteado.getNome();
+        return amigoSorteado.getEmail();
     }
 }

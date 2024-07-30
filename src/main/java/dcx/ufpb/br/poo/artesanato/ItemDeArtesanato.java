@@ -45,7 +45,6 @@ public class ItemDeArtesanato  implements Comparable<ItemDeArtesanato> {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         ItemDeArtesanato that = (ItemDeArtesanato) o;
         return Objects.equals(codigo, that.codigo);
     }
