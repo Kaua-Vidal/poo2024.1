@@ -31,7 +31,7 @@ public class Conta {
 
     public double debitar(double valor){
         if (valor<=0){
-            throw new IllegalArgumentException("O valor a ser acrescentado não pode ser menor que 0");
+            throw new IllegalArgumentException("\n");
         }
         this.saldo -= valor;
         return this.saldo;
